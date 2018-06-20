@@ -33,17 +33,17 @@ mvn clean package
 ```
 
 :bulb: If you have issues with building it locally due to your setup, you can download the
-server assembly [here](https://github.com/cchesser/java-perf-workshop/wiki/java-perf-workshop-server-1.0-SNAPSHOT.jar).
+server assembly [here](https://github.com/cchesser/java-perf-workshop/releases/download/1.0/java-perf-workshop-server-1.0.jar).
 
 Start the workshop service:
 
 ```bash
-java -jar java-perf-workshop-server/target/java-perf-workshop-server-1.0-SNAPSHOT.jar server server.yml
+java -jar java-perf-workshop-server/target/java-perf-workshop-server-1.1-SNAPSHOT.jar server server.yml
 ```
 
 #### Mocking Service Dependency
 
-To simulate responses of kcdc.info (as the service may change over time), we will first run a mock 
+To simulate responses of kcdc.info (as the service may change over time), we will first run a mock
 instance of this service using [WireMock](http://wiremock.org/). Go ahead and start another terminal
 session where we will run another service to mock a remote dependency of the workshop service. Navigate
 to the same directory where you cloned this repository, then execute the following commands:
@@ -96,7 +96,7 @@ logging:
 
 #### Testing
 
-The service will return back results from the KCDC website on sessions that are available which contain 
+The service will return back results from the KCDC website on sessions that are available which contain
 a substring in their title, abstract, or tags. Example:
 
 [http://localhost:8080/search?q=clojure](http://localhost:8080/search?q=clojure)
